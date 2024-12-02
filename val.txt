@@ -1,0 +1,180 @@
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8n summary (fused): 168 layers, 3,005,843 parameters, 0 gradients, 8.1 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp0\test\labels... 41 images, 0 backgrounds, 0
+val: New cache created: C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp0\test\labels.cache
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         41        383      0.869      0.841      0.883      0.287      0.404
+Speed: 0.5ms preprocess, 7.3ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8s summary (fused): 168 layers, 11,125,971 parameters, 0 gradients, 28.4 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp0\test\labels.cache... 41 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         41        383      0.885      0.836      0.877      0.288      0.413
+Speed: 0.5ms preprocess, 8.4ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val2
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8m summary (fused): 218 layers, 25,840,339 parameters, 0 gradients, 78.7 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp0\test\labels.cache... 41 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         41        383      0.863      0.841      0.842      0.298      0.399
+Speed: 0.4ms preprocess, 16.0ms inference, 0.0ms loss, 0.8ms postprocess per image
+Results saved to runs\detect\val3
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8l summary (fused): 268 layers, 43,607,379 parameters, 0 gradients, 164.8 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp0\test\labels.cache... 41 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         41        383      0.862      0.843      0.868      0.319      0.413
+Speed: 0.6ms preprocess, 24.1ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val4
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8x summary (fused): 268 layers, 68,124,531 parameters, 0 gradients, 257.4 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp0\test\labels.cache... 41 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         41        383      0.878      0.867      0.892      0.324      0.426
+Speed: 0.5ms preprocess, 42.9ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val5
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8n summary (fused): 168 layers, 3,005,843 parameters, 0 gradients, 8.1 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp1\test\labels... 42 images, 0 backgrounds, 0
+val: New cache created: C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp1\test\labels.cache
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        513      0.877      0.805      0.861      0.352      0.418
+Speed: 0.3ms preprocess, 6.8ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val6
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8s summary (fused): 168 layers, 11,125,971 parameters, 0 gradients, 28.4 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp1\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        513      0.822      0.838      0.859      0.374      0.419
+Speed: 0.4ms preprocess, 9.5ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val7
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8m summary (fused): 218 layers, 25,840,339 parameters, 0 gradients, 78.7 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp1\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        513       0.88      0.802       0.86      0.361      0.416
+Speed: 0.8ms preprocess, 15.7ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val8
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8l summary (fused): 268 layers, 43,607,379 parameters, 0 gradients, 164.8 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp1\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        513      0.867       0.81      0.836      0.369       0.42
+Speed: 0.4ms preprocess, 24.5ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val9
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8x summary (fused): 268 layers, 68,124,531 parameters, 0 gradients, 257.4 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp1\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        513      0.841      0.825      0.836      0.372       0.42
+Speed: 0.3ms preprocess, 43.0ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val10
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8n summary (fused): 168 layers, 3,005,843 parameters, 0 gradients, 8.1 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp2\test\labels... 42 images, 0 backgrounds, 0
+val: New cache created: C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp2\test\labels.cache
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        515      0.813      0.768       0.78      0.348      0.385
+Speed: 0.3ms preprocess, 4.6ms inference, 0.0ms loss, 1.5ms postprocess per image
+Results saved to runs\detect\val11
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8s summary (fused): 168 layers, 11,125,971 parameters, 0 gradients, 28.4 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp2\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        515      0.801      0.726      0.771      0.286      0.366
+Speed: 0.5ms preprocess, 6.2ms inference, 0.0ms loss, 1.4ms postprocess per image
+Results saved to runs\detect\val12
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8m summary (fused): 218 layers, 25,840,339 parameters, 0 gradients, 78.7 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp2\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        515      0.837      0.769      0.791      0.332      0.386
+Speed: 0.5ms preprocess, 15.0ms inference, 0.0ms loss, 1.1ms postprocess per image
+Results saved to runs\detect\val13
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8l summary (fused): 268 layers, 43,607,379 parameters, 0 gradients, 164.8 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp2\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        515      0.774      0.737      0.772      0.317      0.382
+Speed: 0.3ms preprocess, 23.8ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val14
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8x summary (fused): 268 layers, 68,124,531 parameters, 0 gradients, 257.4 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp2\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        515      0.809      0.779      0.799      0.313      0.391
+Speed: 0.3ms preprocess, 42.6ms inference, 0.0ms loss, 1.6ms postprocess per image
+Results saved to runs\detect\val15
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8n summary (fused): 168 layers, 3,005,843 parameters, 0 gradients, 8.1 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp3\test\labels... 42 images, 0 backgrounds, 0
+val: New cache created: C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp3\test\labels.cache
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        472      0.786      0.801      0.833      0.347      0.407
+Speed: 0.3ms preprocess, 4.8ms inference, 0.0ms loss, 1.4ms postprocess per image
+Results saved to runs\detect\val16
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8s summary (fused): 168 layers, 11,125,971 parameters, 0 gradients, 28.4 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp3\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        472      0.844      0.813       0.86      0.402      0.436
+Speed: 0.3ms preprocess, 8.5ms inference, 0.0ms loss, 1.1ms postprocess per image
+Results saved to runs\detect\val17
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8m summary (fused): 218 layers, 25,840,339 parameters, 0 gradients, 78.7 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp3\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        472      0.837      0.795      0.836      0.351      0.419
+Speed: 0.3ms preprocess, 16.7ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs\detect\val18
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8l summary (fused): 268 layers, 43,607,379 parameters, 0 gradients, 164.8 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp3\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        472      0.871      0.776      0.847      0.403      0.426
+Speed: 0.4ms preprocess, 25.1ms inference, 0.0ms loss, 0.8ms postprocess per image
+Results saved to runs\detect\val19
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8x summary (fused): 268 layers, 68,124,531 parameters, 0 gradients, 257.4 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp3\test\labels.cache... 42 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         42        472      0.874      0.808      0.858       0.38      0.429
+Speed: 0.3ms preprocess, 42.7ms inference, 0.0ms loss, 0.9ms postprocess per image
+Results saved to runs\detect\val20
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8n summary (fused): 168 layers, 3,005,843 parameters, 0 gradients, 8.1 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp4\test\labels... 41 images, 0 backgrounds, 0
+val: New cache created: C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp4\test\labels.cache
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         41        497       0.82      0.781      0.808      0.337      0.396
+Speed: 0.3ms preprocess, 6.9ms inference, 0.0ms loss, 0.7ms postprocess per image
+Results saved to runs\detect\val21
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8s summary (fused): 168 layers, 11,125,971 parameters, 0 gradients, 28.4 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp4\test\labels.cache... 41 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         41        497      0.836      0.801      0.839      0.334      0.409
+Speed: 0.4ms preprocess, 8.1ms inference, 0.0ms loss, 1.3ms postprocess per image
+Results saved to runs\detect\val22
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8m summary (fused): 218 layers, 25,840,339 parameters, 0 gradients, 78.7 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp4\test\labels.cache... 41 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         41        497      0.857      0.795      0.849      0.335       0.41
+Speed: 0.3ms preprocess, 16.3ms inference, 0.0ms loss, 1.2ms postprocess per image
+Results saved to runs\detect\val23
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8l summary (fused): 268 layers, 43,607,379 parameters, 0 gradients, 164.8 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp4\test\labels.cache... 41 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         41        497      0.824      0.815      0.836      0.339      0.411
+Speed: 0.3ms preprocess, 24.4ms inference, 0.0ms loss, 0.7ms postprocess per image
+Results saved to runs\detect\val24
+Ultralytics 8.3.25 🚀 Python-3.8.18 torch-2.3.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3060, 12288MiB)
+YOLOv8x summary (fused): 268 layers, 68,124,531 parameters, 0 gradients, 257.4 GFLOPs
+val: Scanning C:\Users\tanaka\dataset\cross_validation\detection\yeast\temp4\test\labels.cache... 41 images, 0 backgrou
+                 Class     Images  Instances      Box(P          R      mAP50      mAP75  mAP50-95): 100%|██████████| 3
+                   all         41        497      0.808      0.831      0.833      0.315       0.41
+Speed: 0.3ms preprocess, 43.0ms inference, 0.0ms loss, 0.7ms postprocess per image
+Results saved to runs\detect\val25
