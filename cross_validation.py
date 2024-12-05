@@ -55,6 +55,13 @@ class CrossValidationDataset:
         self.sum   = self.train + self.valid + self.test
         self.enume = list(map(str, range(self.sum)))
 
+        self.temp_file_data = {}
+        if os.path.isfile(os.path.join(self.path, '.cross_validation')):
+            with open(os.path.join(self.path, '.cross_validation'), 'r') as f:
+                for f_ in f.read().split('\n'):
+                    f_ = f_.split('::')
+                    self.temp_file_data[f_[0]] = f_[1:]
+
     def __iter__(self):
         return self
 
@@ -62,11 +69,17 @@ class CrossValidationDataset:
         if self.num >= self.sum:
             self.num   = 0
             self.enume = list(map(str, range(self.sum)))
+            with open(os.path.join(self.path, '.cross_validation'), 'w') as f:
+                f.write('\n'.join(map(lambda x: '::'.join([x[0]] + x[1]), self.temp_file_data.items())))
             raise StopIteration()
         
         if self.num != 0:
             self.enume = self.enume[1:] + [self.enume[0]]
         self.num += 1
+
+        if str(self.enume) in self.temp_file_data.keys():
+            return self.temp_file_data[str(self.enume)]
+
         train = self.enume[:self.train]
         valid = self.enume[self.train:self.train+self.valid]
         test  = self.enume[self.train+self.valid:]
@@ -141,7 +154,12 @@ class CrossValidationDataset:
             shutil.copy(data, test_label_temp_dir / Path(data).name)
 
         save_dir = str(save_dir)
-        return os.path.join(save_dir, 'data.yaml'), os.path.join(save_dir, 'test.yaml')
+
+        data_yaml = os.path.join(save_dir, 'data.yaml')
+        test_yaml = os.path.join(save_dir, 'test.yaml')
+        self.temp_file_data[str(self.enume)] = [data_yaml, test_yaml]
+
+        return data_yaml, test_yaml
 
 
 @contextmanager

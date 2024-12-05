@@ -33,6 +33,7 @@ from ultralytics.nn.modules import (
     C2fPSA,
     C3Ghost,
     C3k2,
+    C3k2CrossConv,
     C3x,
     CBFuse,
     CBLinear,
@@ -61,6 +62,7 @@ from ultralytics.nn.modules import (
     Segment,
     WorldDetect,
     v10Detect,
+    CBAM,
 )
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
@@ -981,6 +983,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             C2,
             C2f,
             C3k2,
+            C3k2CrossConv,
             RepNCSPELAN4,
             ELAN1,
             ADown,
@@ -1014,6 +1017,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 C2,
                 C2f,
                 C3k2,
+                C3k2CrossConv,
                 C2fAttn,
                 C3,
                 C3TR,
@@ -1026,7 +1030,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             }:
                 args.insert(2, n)  # number of repeats
                 n = 1
-            if m is C3k2:  # for M/L/X sizes
+            if m in {C3k2, C3k2CrossConv}:  # for M/L/X sizes
                 legacy = False
                 if scale in "mlx":
                     args[3] = True
@@ -1058,6 +1062,9 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             args = [c1, c2, *args[1:]]
         elif m is CBFuse:
             c2 = ch[f[-1]]
+        elif m is CBAM:
+            c2 = ch[-1]
+            args = [c2]
         else:
             c2 = ch[f]
 
@@ -1104,7 +1111,7 @@ def guess_model_scale(model_path):
         (str): The size character of the model's scale, which can be n, s, m, l, or x.
     """
     try:
-        return re.search(r"yolo[v]?\d+([nslmx])", Path(model_path).stem).group(1)  # noqa, returns n, s, m, l, or x
+        return re.search(r".*yolo[v]?\d+([nslmx])", Path(model_path).stem).group(1)  # noqa, returns n, s, m, l, or x
     except AttributeError:
         return ""
 
