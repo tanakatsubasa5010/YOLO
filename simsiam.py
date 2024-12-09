@@ -153,3 +153,7 @@ def train(encoder, prev_dim, path, batch, epochs, device='cuda'):
 backbone = YOLO('yolo11n.yaml').model.model[:11]
 train(backbone, 256, r"C:\Users\tanaka\dataset\coco\train2017\train2017", 16, 100)
 
+
+
+model = YOLO('yolo11n.yaml', learned_section='backbone39.pt')
+model.train(data=r"C:\Users\tanaka\dataset\cross_validation\detection\3bacteria\temp0\data.yaml", batch=8, epochs=500, patience=500, workers=0, name='simsiam_yolo11n')

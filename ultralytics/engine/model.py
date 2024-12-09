@@ -84,6 +84,7 @@ class Model(nn.Module):
         model: Union[str, Path] = "yolo11n.pt",
         task: str = None,
         verbose: bool = False,
+        learned_section = None
     ) -> None:
         """
         Initializes a new instance of the YOLO model class.
@@ -122,6 +123,7 @@ class Model(nn.Module):
         self.metrics = None  # validation/training metrics
         self.session = None  # HUB session
         self.task = task  # task type
+        self.learned_section = learned_section
         model = str(model).strip()
 
         # Check if Ultralytics HUB model from https://hub.ultralytics.com
@@ -251,7 +253,7 @@ class Model(nn.Module):
         cfg_dict = yaml_model_load(cfg)
         self.cfg = cfg
         self.task = task or guess_model_task(cfg_dict)
-        self.model = (model or self._smart_load("model"))(cfg_dict, verbose=verbose and RANK == -1)  # build model
+        self.model = (model or self._smart_load("model"))(cfg_dict, verbose=verbose and RANK == -1, learned_section=self.learned_section)  # build model
         self.overrides["model"] = self.cfg
         self.overrides["task"] = self.task
 
@@ -796,7 +798,7 @@ class Model(nn.Module):
         if args.get("resume"):
             args["resume"] = self.ckpt_path
 
-        self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)
+        self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks, learned_section=self.learned_section)
         if not args.get("resume"):  # manually set model only if not resuming
             self.trainer.model = self.trainer.get_model(weights=self.model if self.ckpt else None, cfg=self.model.yaml)
             self.model = self.trainer.model
@@ -806,7 +808,8 @@ class Model(nn.Module):
         # Update model and cfg after training
         if RANK in {-1, 0}:
             ckpt = self.trainer.best if self.trainer.best.exists() else self.trainer.last
-            self.model, _ = attempt_load_one_weight(ckpt)
+            if self.learned_section == None:
+                self.model, _ = attempt_load_one_weight(ckpt)
             self.overrides = self.model.args
             self.metrics = getattr(self.trainer.validator, "metrics", None)  # TODO: no metrics returned by DDP
         return self.metrics

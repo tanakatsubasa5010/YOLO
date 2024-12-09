@@ -90,7 +90,7 @@ class BaseTrainer:
         csv (Path): Path to results CSV file.
     """
 
-    def __init__(self, cfg=DEFAULT_CFG, overrides=None, _callbacks=None):
+    def __init__(self, cfg=DEFAULT_CFG, overrides=None, _callbacks=None, learned_section=None):
         """
         Initializes the BaseTrainer class.
 
@@ -105,6 +105,7 @@ class BaseTrainer:
         self.metrics = None
         self.plots = {}
         init_seeds(self.args.seed + 1 + RANK, deterministic=self.args.deterministic)
+        self.learned_section = learned_section
 
         # Dirs
         self.save_dir = get_save_dir(self.args)
@@ -579,7 +580,7 @@ class BaseTrainer:
             cfg = weights.yaml
         elif isinstance(self.args.pretrained, (str, Path)):
             weights, _ = attempt_load_one_weight(self.args.pretrained)
-        self.model = self.get_model(cfg=cfg, weights=weights, verbose=RANK == -1)  # calls Model(cfg, weights)
+        self.model = self.get_model(cfg=cfg, weights=weights, verbose=RANK == -1, learned_section=self.learned_section)  # calls Model(cfg, weights)
         return ckpt
 
     def optimizer_step(self):
