@@ -8,6 +8,7 @@ import torch.nn.functional as F
 from ultralytics.utils.torch_utils import fuse_conv_and_bn
 
 from .conv import Conv, DWConv, GhostConv, LightConv, RepConv, autopad
+from . import attentions
 from .transformer import TransformerBlock
 
 __all__ = (
@@ -467,6 +468,33 @@ class C2fAttn(nn.Module):
         y = list(self.cv1(x).split((self.c, self.c), 1))
         y.extend(m(y[-1]) for m in self.m)
         y.append(self.attn(y[-1], guide))
+        return self.cv2(torch.cat(y, 1))
+
+
+class C3k2Attn(nn.Module):
+    """C3k2 module with an additional attn module."""
+
+    def __init__(self, c1, c2, n=1, c3k=False, attn=['EMA', {}], e=0.5, g=1, shortcut=True):
+        """Initializes C3k2 module with attention mechanism for enhanced feature extraction and processing."""
+        super().__init__()
+        self.c = int(c2 * e)  # hidden channels
+        self.cv1 = Conv(c1, 2 * self.c, 1, 1)
+        self.cv2 = Conv((3 + n) * self.c, c2, 1)  # optional act=FReLU(c2)
+        self.m = nn.ModuleList(C3k(self.c, self.c, 2, shortcut, g) if c3k else Bottleneck(self.c, self.c, shortcut, g) for _ in range(n))
+        self.attn = getattr(attentions, attn[0])(c1=self.c, **attn[1])
+
+    def forward(self, x):
+        """Forward pass through C3k2 layer."""
+        y = list(self.cv1(x).chunk(2, 1))
+        y.extend(m(y[-1]) for m in self.m)
+        y.append(self.attn(y[-1]))
+        return self.cv2(torch.cat(y, 1))
+
+    def forward_split(self, x):
+        """Forward pass using split() instead of chunk()."""
+        y = list(self.cv1(x).split((self.c, self.c), 1))
+        y.extend(m(y[-1]) for m in self.m)
+        y.append(self.attn(y[-1]))
         return self.cv2(torch.cat(y, 1))
 
 
