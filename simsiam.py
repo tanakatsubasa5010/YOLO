@@ -146,8 +146,8 @@ def train(encoder, prev_dim, path, batch, epochs, device='cuda'):
                 pbar.set_description(desc + '  loss: {:.3f}'.format(loss))
                 pbar.update()
 
-        torch.save(backbone.cpu().state_dict(), 'backbone{}.pt'.format(e))
-        backbone.to(device)
+        torch.save(encoder.cpu().state_dict(), 'encoder{}.pt'.format(e))
+        encoder.to(device)
 
 
 # backbone = YOLO('yolo11n.yaml').model.model[:11]
