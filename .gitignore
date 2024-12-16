@@ -23,15 +23,3 @@ ultralytics/utils/callbacks/__pycache__/neptune.cpython-38.pyc
 ultralytics/utils/callbacks/__pycache__/raytune.cpython-38.pyc
 ultralytics/utils/callbacks/__pycache__/tensorboard.cpython-38.pyc
 ultralytics/utils/callbacks/__pycache__/wb.cpython-38.pyc
-out.csv
-val.txt
-ultralytics/engine/__pycache__/model.cpython-38.pyc
-ultralytics/engine/__pycache__/trainer.cpython-38.pyc
-ultralytics/models/yolo/__pycache__/model.cpython-38.pyc
-ultralytics/models/yolo/detect/__pycache__/train.cpython-38.pyc
-ultralytics/models/yolo/detect/__pycache__/val.cpython-38.pyc
-ultralytics/nn/__pycache__/tasks.cpython-38.pyc
-ultralytics/nn/modules/__pycache__/__init__.cpython-38.pyc
-ultralytics/nn/modules/__pycache__/block.cpython-38.pyc
-ultralytics/nn/modules/__pycache__/conv.cpython-38.pyc
-ultralytics/utils/__pycache__/metrics.cpython-38.pyc
