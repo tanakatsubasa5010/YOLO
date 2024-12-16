@@ -741,7 +741,7 @@ class Metric(SimpleClass):
 
     def class_result(self, i):
         """Class-aware result, return p[i], r[i], ap50[i], ap[i]."""
-        return self.p[i], self.r[i], self.ap50[i], self.ap[i]
+        return self.p[i], self.r[i], self.ap50[i], self.ap75[i], self.ap[i]
 
     @property
     def maps(self):

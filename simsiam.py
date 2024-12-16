@@ -145,16 +145,20 @@ def train(encoder, prev_dim, path, batch, epochs, device='cuda'):
                 losses = (i * losses + loss.item()) / (1 + i)
                 pbar.set_description(desc + '  loss: {:.3f}'.format(loss))
                 pbar.update()
+                break
 
-        torch.save(encoder.cpu().state_dict(), 'encoder{}.pt'.format(e))
+        torch.save(encoder.cpu().state_dict(), 'encoder.pt')
         encoder.to(device)
 
 
 # backbone = YOLO('yolo11n.yaml').model.model[:11]
 # train(backbone, 256, r"C:\Users\tanaka\dataset\coco\train2017\train2017", 16, 100)
 
+backbone = YOLO('yolo11x.yaml').model.model[:11]
+train(backbone, 768, r"C:\Users\tanaka\dataset\coco\train2017\train2017", 4, 1)
 
 
-model = YOLO('yolo11n.yaml', learned_section='backbone39.pt')
+
+# model = YOLO('yolo11n.yaml', learned_section='backbone39.pt')
 # model.train(data=r"C:\Users\tanaka\dataset\cross_validation\detection\3bacteria\temp0\data.yaml", batch=8, epochs=100, patience=500, workers=0, name='simsiam_yolo11n')
-model.train(data=r"C:\Users\tanaka\dataset\cross_validation\detection\3bacteria\temp0\data.yaml", freeze=11, batch=8, epochs=100, patience=500, workers=0, name='freeze_simsiam_yolo11n')
+# model.train(data=r"C:\Users\tanaka\dataset\cross_validation\detection\3bacteria\temp0\data.yaml", freeze=11, batch=8, epochs=100, patience=500, workers=0, name='freeze_simsiam_yolo11n')
