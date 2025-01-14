@@ -145,17 +145,16 @@ def train(encoder, prev_dim, path, batch, epochs, device='cuda'):
                 losses = (i * losses + loss.item()) / (1 + i)
                 pbar.set_description(desc + '  loss: {:.3f}'.format(loss))
                 pbar.update()
-                break
 
         torch.save(encoder.cpu().state_dict(), 'encoder.pt')
         encoder.to(device)
 
 
-# backbone = YOLO('yolo11n.yaml').model.model[:11]
-# train(backbone, 256, r"C:\Users\tanaka\dataset\coco\train2017\train2017", 16, 100)
+backbone = YOLO('yolo11n.yaml').model.model[:11]
+train(backbone, 256, r"C:\Users\tanaka\dataset\list_of_bacteria\temp\2", 16, 500)
 
-backbone = YOLO('yolo11x.yaml').model.model[:11]
-train(backbone, 768, r"C:\Users\tanaka\dataset\coco\train2017\train2017", 4, 1)
+# backbone = YOLO('yolo11x.yaml').model.model[:11]
+# train(backbone, 768, r"C:\Users\tanaka\dataset\coco\train2017\train2017", 4, 50)
 
 
 

@@ -1,4 +1,2 @@
-python main2.py
-python create_csv.py
-cd ../classify
+python simsiam.py
 python main.py
